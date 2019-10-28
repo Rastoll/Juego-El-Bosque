@@ -23,6 +23,7 @@ public class Mazmorra {
 				Combate.Combatir(ene, jug, niv, inv);
 				rondas++;
 			}
+			jug.setKmmazmo(jug.getKmmazmo()+10);
 			System.out.println("¡Has completado la mazmorra!");
 		}else {System.out.println("Aún no puedes entrar ahí");}
 	}

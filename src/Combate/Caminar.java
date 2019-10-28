@@ -17,8 +17,9 @@ public class Caminar {
 			niv = new Random().nextInt(3)+1;
 		}
 		String nombre = Enemigos.nombresenem(jug, num, niv, inv);
-		Enemigos ene = new Enemigos(nombre, 10*num, 10*num, 2*num, 4*num);
+		Enemigos ene = new Enemigos(nombre, 10*num, 10*num, 1*num, 3*num);
 		genenemigo(ene, jug, niv, niv, inv);
+		jug.setKm(jug.getKm()+1);
 		System.out.println("Caminas y te encuentras con un " + ene.getNombre());
 		Combate.Combatir(ene, jug, niv, inv);
 	}

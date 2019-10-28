@@ -7,7 +7,7 @@ public class Cosas {
 	public static void Subirnivel(Heroe jug) {
 		if(jug.getExp() >= jug.getExpmax()) {
 			jug.setNivel(jug.getNivel()+1);
-			System.out.println("¡Has subido al nivel " + jug.getNivel() + "!");
+			System.out.println("¡Has subido al nivel " + jug.getNivel() + "! Obtienes 2 puntos de personaje");
 			//Se comprueba si ha sobrado exp para guardarla
 			int dif = jug.getExp() - jug.getExpmax();
 			jug.setExp(dif);
@@ -19,6 +19,7 @@ public class Cosas {
 			//Se restauran la vida y el maná al máximo
 			jug.setVida(jug.getVidamax()); 
 			jug.setMana(jug.getManamax());
+			jug.setPuntos(jug.getPuntos()+2);
 		}
 	}
 	public static void ComprobarVida(Heroe jug) {

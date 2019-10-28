@@ -2,16 +2,18 @@ package Personajes;
 
 import java.util.Scanner;
 
+import Inventario.Inventario;
+
 public class Heroe {
 
 	  //declaración de atributos
 	public static String nombre;
 	public static int vida, vidamax, ataquemin, ataquemax, nivel, km, oro, exp = 0, expmax = 100;
-	public static int curamin, curamax, mana, manamax, kmmazmo;
+	public static int curamin, curamax, mana, manamax, kmmazmo, puntos, bolfue;
 
 	  //declaración de constructor
 	public Heroe(String nombre, int vida, int vidamax, int ataquemin, int ataquemax, int nivel, int km, 
-				int oro, int curamin, int curamax, int mana, int manamax, int kmmazmo) {
+				int oro, int curamin, int curamax, int mana, int manamax, int kmmazmo, int puntos, int bolfue) {
 		this.nombre= nombre; 
 	    this.vida= vida;
 	    this.vidamax= vidamax;
@@ -27,6 +29,8 @@ public class Heroe {
 	    this.mana= mana;
 	    this.manamax= manamax;
 	    this.kmmazmo= kmmazmo;
+	    this.puntos= puntos;
+	    this.bolfue= bolfue;
 	}
 
 	public int getVida() {
@@ -144,8 +148,9 @@ public class Heroe {
 	public static void setManamax(int manamax) {
 		Heroe.manamax = manamax;
 	}
-	public static void barrajug(Heroe jug) {
+	public static void barrajug(Heroe jug, Inventario inv) {
 		System.out.print(jug.getNombre() + " | Vida: " + jug.getVida() + "/" + jug.getVidamax());
+		System.out.print(" | Armadura: " + inv.getArmadura() + "/100");
 		System.out.print(" | Mana: " + jug.getMana() + "/" + jug.getManamax());
 		System.out.print(" | Ataque: " + jug.getAtaquemin() + "/" + jug.getAtaquemax());
 		System.out.print(" | Cura: " + jug.getCuramin() + "/" + jug.getCuramax());
@@ -160,6 +165,22 @@ public class Heroe {
 
 	public static void setKmmazmo(int kmmazmo) {
 		Heroe.kmmazmo = kmmazmo;
+	}
+
+	public static int getPuntos() {
+		return puntos;
+	}
+
+	public static void setPuntos(int puntos) {
+		Heroe.puntos = puntos;
+	}
+
+	public static int getBolfue() {
+		return bolfue;
+	}
+
+	public static void setBolfue(int bolfue) {
+		Heroe.bolfue = bolfue;
 	}
 	
 }
